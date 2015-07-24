@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>Final Data Frame Columns</title>
+
+<script type="text/javascript">
+window.onload = function() {
+  var imgs = document.getElementsByTagName('img'), i, img;
+  for (i = 0; i < imgs.length; i++) {
+    img = imgs[i];
+    // center an image if it is the only element of its parent
+    if (img.parentElement.childElementCount === 1)
+      img.parentElement.style.textAlign = 'center';
+  }
+};
+</script>
+
+
+
+
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 13px;
+}
+
+body {
+  max-width: 800px;
+  margin: auto;
+  padding: 1em;
+  line-height: 20px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 {
+   font-size:2.2em;
+}
+
+h2 {
+   font-size:1.8em;
+}
+
+h3 {
+   font-size:1.4em;
+}
+
+h4 {
+   font-size:1.0em;
+}
+
+h5 {
+   font-size:0.9em;
+}
+
+h6 {
+   font-size:0.8em;
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre, img {
+  max-width: 100%;
+}
+pre {
+  overflow-x: auto;
+}
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code {
+  font-size: 92%;
+  border: 1px solid #ccc;
+}
+
+code[class] {
+  background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * {
+      background: transparent !important;
+      color: black !important;
+      filter:none !important;
+      -ms-filter: none !important;
+   }
+
+   body {
+      font-size:12pt;
+      max-width:100%;
+   }
+
+   a, a:visited {
+      text-decoration: underline;
+   }
+
+   hr {
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote {
+      padding-right: 1em;
+      page-break-inside: avoid;
+   }
+
+   tr, img {
+      page-break-inside: avoid;
+   }
+
+   img {
+      max-width: 100% !important;
+   }
+
+   @page :left {
+      margin: 15mm 20mm 15mm 10mm;
+   }
+
+   @page :right {
+      margin: 15mm 10mm 15mm 20mm;
+   }
+
+   p, h2, h3 {
+      orphans: 3; widows: 3;
+   }
+
+   h2, h3 {
+      page-break-after: avoid;
+   }
+}
+</style>
+
+
+
+</head>
+
+<body>
+<h1>Final Data Frame Columns</h1>
+
+<p><strong>Subject</strong>: <em>integer</em>, ID of the subject, values ranging from 1 to 30.</p>
+
+<p><strong>Activity</strong>: <em>factor</em>, activity performed while the data was taken, values being one of:</p>
+
+<pre><code>* WALKING
+* WALKING_UPSTAIRS
+* WALKING_DOWNSTAIRS
+* SITTING
+* STANDING
+* LAYING
+</code></pre>
+
+<p><strong>Features</strong> <em>numeric</em>: means of the different mean and std features contained in the original data set. For those columns, only the ones ending with -mean() and -std() were taken since those were considered real means and stds of other readings, as opposed to those like meanFreq, which were considered only as normal data.</p>
+
+<ul>
+<li>tBodyAcc-mean()-X</li>
+<li>tBodyAcc-mean()-Y</li>
+<li>tBodyAcc-mean()-Z</li>
+<li>tBodyAcc-std()-X</li>
+<li>tBodyAcc-std()-Y</li>
+<li>tBodyAcc-std()-Z</li>
+<li>tGravityAcc-mean()-X</li>
+<li>tGravityAcc-mean()-Y</li>
+<li>tGravityAcc-mean()-Z</li>
+<li>tGravityAcc-std()-X</li>
+<li>tGravityAcc-std()-Y</li>
+<li>tGravityAcc-std()-Z</li>
+<li>tBodyAccJerk-mean()-X</li>
+<li>tBodyAccJerk-mean()-Y</li>
+<li>tBodyAccJerk-mean()-Z</li>
+<li>tBodyAccJerk-std()-X</li>
+<li>tBodyAccJerk-std()-Y</li>
+<li>tBodyAccJerk-std()-Z</li>
+<li>tBodyGyro-mean()-X</li>
+<li>tBodyGyro-mean()-Y</li>
+<li>tBodyGyro-mean()-Z</li>
+<li>tBodyGyro-std()-X</li>
+<li>tBodyGyro-std()-Y</li>
+<li>tBodyGyro-std()-Z</li>
+<li>tBodyGyroJerk-mean()-X</li>
+<li>tBodyGyroJerk-mean()-Y</li>
+<li>tBodyGyroJerk-mean()-Z</li>
+<li>tBodyGyroJerk-std()-X</li>
+<li>tBodyGyroJerk-std()-Y</li>
+<li>tBodyGyroJerk-std()-Z</li>
+<li>tBodyAccMag-mean()</li>
+<li>tBodyAccMag-std()</li>
+<li>tGravityAccMag-mean()</li>
+<li>tGravityAccMag-std()</li>
+<li>tBodyAccJerkMag-mean()</li>
+<li>tBodyAccJerkMag-std()</li>
+<li>tBodyGyroMag-mean()</li>
+<li>tBodyGyroMag-std()</li>
+<li>tBodyGyroJerkMag-mean()</li>
+<li>tBodyGyroJerkMag-std()</li>
+<li>fBodyAcc-mean()-X</li>
+<li>fBodyAcc-mean()-Y</li>
+<li>fBodyAcc-mean()-Z</li>
+<li>fBodyAcc-std()-X</li>
+<li>fBodyAcc-std()-Y</li>
+<li>fBodyAcc-std()-Z</li>
+<li>fBodyAccJerk-mean()-X</li>
+<li>fBodyAccJerk-mean()-Y</li>
+<li>fBodyAccJerk-mean()-Z</li>
+<li>fBodyAccJerk-std()-X</li>
+<li>fBodyAccJerk-std()-Y</li>
+<li>fBodyAccJerk-std()-Z</li>
+<li>fBodyGyro-mean()-X</li>
+<li>fBodyGyro-mean()-Y</li>
+<li>fBodyGyro-mean()-Z</li>
+<li>fBodyGyro-std()-X</li>
+<li>fBodyGyro-std()-Y</li>
+<li>fBodyGyro-std()-Z</li>
+<li>fBodyAccMag-mean()</li>
+<li>fBodyAccMag-std()</li>
+<li>fBodyBodyAccJerkMag-mean()</li>
+<li>fBodyBodyAccJerkMag-std()</li>
+<li>fBodyBodyGyroMag-mean()</li>
+<li>fBodyBodyGyroMag-std()</li>
+<li>fBodyBodyGyroJerkMag-mean()</li>
+<li>fBodyBodyGyroJerkMag-std()</li>
+</ul>
+
+</body>
+
+</html>
